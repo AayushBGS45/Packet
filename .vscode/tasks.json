@@ -1,0 +1,66 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Simulator (all sources)",
+            "type": "shell",
+            "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+            "args": [
+                "-std=c11",
+                "-Wall",
+                "-Wextra",
+                "-g",
+                "main.c",
+                "src/router.c",
+                "src/network.c",
+                "src/routing.c",
+                "src/packet.c",
+                "src/simulation.c",
+                "src/statistics.c",
+                "src/input_util.c",
+                "-o",
+                "simulator.exe",
+                "-lm"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": ["$gcc"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Compile all .c sources into simulator.exe"
+        },
+        {
+            "label": "Build and Run Tests",
+            "type": "shell",
+            "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+            "args": [
+                "-std=c11",
+                "-Wall",
+                "-Wextra",
+                "-g",
+                "-I.",
+                "tests/tests.c",
+                "src/router.c",
+                "src/network.c",
+                "src/routing.c",
+                "src/packet.c",
+                "src/statistics.c",
+                "src/input_util.c",
+                "-o",
+                "tests/run_tests.exe",
+                "-lm",
+                "&&",
+                "tests\\run_tests.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": ["$gcc"],
+            "group": "test",
+            "detail": "Compile and run all automated tests"
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+# Compiled binaries and executables
+*.exe
+*.out
+*.app
+bin/
+
+# Object files and libraries
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+
+# Debug symbol files
+*.pdb
+*.dSYM/
+
+# Test output and simulation export files
+tests/*.csv
+*.csv
+
+# Editor & IDE settings (uncomment if you want to keep .vscode private)
+# .vscode/
+# *.code-workspace
+
+# OS-generated files
+Thumbs.db
+Desktop.ini
+.DS_Store
